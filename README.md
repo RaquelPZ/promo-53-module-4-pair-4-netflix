@@ -6,22 +6,22 @@ Por favor marca a continuación los ejercicios que hayáis terminado:
 
 4.1 Fundamentos de MySQL:
 
-- [ ]  1. Crea la base de datos.
-- [ ]  2. Inserta valores a la bases de datos.
+- [X]  1. Crea la base de datos.
+- [X]  2. Inserta valores a la bases de datos.
 - [x]  3. Crea un repositorio en Github. 
 
 4.2 CRUD MySQL:
 
 - [ ] 1. Consultas sobre las películas
 - [ ] 2. Consultas sobre los actores.
-- [ ]  3. Consultas sobre los usuarios.
-- [ ]  4. Bonus: Agrega más campos a las tablas.
+- [ ] 3. Consultas sobre los usuarios.
+- [ ] 4. Bonus: Agrega más campos a las tablas.
 
 4.3 Diagramas y relaciones MySQL:
 
 - [ ] 1. Piensa qué relación es
-- [ ]  2. Crea la relación User-Movies.
-- [ ]  3. Crea la relación Movies-Actors.
+- [ ] 2. Crea la relación User-Movies.
+- [ ] 3. Crea la relación Movies-Actors.
 
 4.4 Queries avanzadas de SQL:
 
