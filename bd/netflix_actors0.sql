@@ -16,30 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `users`
+-- Table structure for table `actors`
 --
 
-DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `actors`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `users` (
-  `idusers` int NOT NULL AUTO_INCREMENT,
-  `user` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
+CREATE TABLE `actors` (
+  `idactor` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
-  `email` varchar(45) NOT NULL,
-  `plan_details` varchar(45) NOT NULL,
-  PRIMARY KEY (`idusers`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `lastname` varchar(45) NOT NULL,
+  `country` varchar(45) NOT NULL,
+  `birthday` date DEFAULT NULL,
+  `photo` longtext,
+  PRIMARY KEY (`idactor`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `actors`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+LOCK TABLES `actors` WRITE;
+/*!40000 ALTER TABLE `actors` DISABLE KEYS */;
+INSERT INTO `actors` VALUES (1,'Tom','Hanks','Estados Unidos','1956-07-09',NULL),(2,'Roberto','Benigni','Italia','1952-10-27',NULL),(3,'John','Travolta','Estados Unidos','1954-02-18',NULL);
+/*!40000 ALTER TABLE `actors` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-16 10:23:02
+-- Dump completed on 2025-06-20 10:50:31

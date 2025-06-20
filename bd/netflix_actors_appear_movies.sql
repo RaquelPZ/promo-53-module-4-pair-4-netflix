@@ -16,30 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `movies`
+-- Table structure for table `actors_appear_movies`
 --
 
-DROP TABLE IF EXISTS `movies`;
+DROP TABLE IF EXISTS `actors_appear_movies`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `movies` (
-  `idmovies` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(45) NOT NULL,
-  `genre` varchar(45) NOT NULL,
-  `image` varchar(1000) NOT NULL,
-  `category` varchar(45) NOT NULL,
-  `year` int DEFAULT NULL,
-  PRIMARY KEY (`idmovies`)
+CREATE TABLE `actors_appear_movies` (
+  `actors_idactor` int NOT NULL,
+  `movies_idmovies` int NOT NULL,
+  PRIMARY KEY (`actors_idactor`,`movies_idmovies`),
+  KEY `fk_actors_has_movies_movies1_idx` (`movies_idmovies`),
+  KEY `fk_actors_has_movies_actors1_idx` (`actors_idactor`),
+  CONSTRAINT `fk_actors_has_movies_actors1` FOREIGN KEY (`actors_idactor`) REFERENCES `actors` (`idactor`),
+  CONSTRAINT `fk_actors_has_movies_movies1` FOREIGN KEY (`movies_idmovies`) REFERENCES `movies` (`idmovies`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `movies`
+-- Dumping data for table `actors_appear_movies`
 --
 
-LOCK TABLES `movies` WRITE;
-/*!40000 ALTER TABLE `movies` DISABLE KEYS */;
-/*!40000 ALTER TABLE `movies` ENABLE KEYS */;
+LOCK TABLES `actors_appear_movies` WRITE;
+/*!40000 ALTER TABLE `actors_appear_movies` DISABLE KEYS */;
+INSERT INTO `actors_appear_movies` VALUES (3,1),(2,2),(1,3);
+/*!40000 ALTER TABLE `actors_appear_movies` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-16 10:23:02
+-- Dump completed on 2025-06-20 10:50:30
